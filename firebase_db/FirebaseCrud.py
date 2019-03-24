@@ -7,6 +7,7 @@ class performDatabaseOperation:
 
     def __init__(self, name):
         self.databse_name = name
+    
 
     def validateCredentials(self):
         cred = credentials.Certificate("/root/Documents/explore_firebase_pyplot/firebase_db/secret.json")
@@ -25,7 +26,13 @@ class performDatabaseOperation:
 
     def readData(self, reference):
         data = reference.child(self.databse_name).get()
-        print(data)
+        names = []
+        age = []
+        for i in data.keys():
+            print(data[i])
+            names.append(data[i]['name'])
+            age.append(data[i]['age'])
+        return names, age
     
 
     def readDataByValue(self, ref, key, value ):
