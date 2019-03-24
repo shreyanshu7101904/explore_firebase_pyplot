@@ -29,7 +29,7 @@ class performDatabaseOperation:
     
 
     def readDataByValue(self, ref, key, value ):
-        data  = ref.child(self.databse_name).order_by_child('name').equal_to('shreyanshu').get()
+        data  = ref.child(self.databse_name).order_by_child(key).equal_to(value).get()
         print(data.keys())
         for i in data.keys():
             print(data[i])
