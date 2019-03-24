@@ -2,7 +2,7 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import db
 
-
+"""
 cred = credentials.Certificate("key_secrets.json")
 documents = firebase_admin.initialize_app(cred, {
     "databaseURL": "https://testing-firebase-databas-ccbca.firebaseio.com"
@@ -20,4 +20,4 @@ users_ref.set({
         'date_of_birth': 'December 9, 1906',
         'full_name': 'Grace Hopper'
     }
-})
+})"""
