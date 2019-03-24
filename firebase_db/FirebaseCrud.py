@@ -9,7 +9,7 @@ class performDatabaseOperation:
         self.databse_name = name
 
     def validateCredentials(self):
-        cred = credentials.Certificate("./key_secret.json")
+        cred = credentials.Certificate("/root/Documents/explore_firebase_pyplot/firebase_db/secret.json")
         firebase_admin.initialize_app(
             cred, {
                 "databaseURL": "https://testing-firebase-databas-ccbca.firebaseio.com"
@@ -18,6 +18,6 @@ class performDatabaseOperation:
         return ref
 
     def insertData(self, reference, data):
-        ref.child(self.databse_name).set(data)
+        reference.child(self.databse_name).set(data)
         print("data sucessfully inserted")
 
